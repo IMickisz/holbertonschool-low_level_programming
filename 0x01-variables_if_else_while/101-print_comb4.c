@@ -18,17 +18,18 @@ int main(void)
 	{
 		for (j = i + 1 ; j < 10 ; j++)
 		{
-			for (k =j + 1; k < 10; k ++)
+			for (k = j + 1; k < 10; k++)
+			{
+				putchar (i);
+				putchar (j);
+				putchar (k);
+				if (i != 7 || j != 8 || k != 9)
+				{
+					putchar (',');
+					putchar (' ');
+				}
+			}
 		}
-		putchar (i);
-		putchar (j);
-		putchar (k);
-		if (i != 7 || j != 8 || k != 9)
-		{
-			putchar (',');
-			putchar (' ');
-		}
-	}
 	}
 }
 putchar('\n');
