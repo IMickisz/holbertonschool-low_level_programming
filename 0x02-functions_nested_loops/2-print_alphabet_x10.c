@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_alphabet - write a function that prints the alphabet x10, in lowercase
+ * print_alphabet_x10 - function that prints the alphabet x10, in lowercase
  */
 
 void print_alphabet_x10(void)
