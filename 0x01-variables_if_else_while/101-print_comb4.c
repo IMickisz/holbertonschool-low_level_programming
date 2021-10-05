@@ -10,27 +10,26 @@
 
 int main(void)
 {
-	int i, j, k, l;
+	int i, j, k;
 
-	for (i = 0; i < 1000; i++)
+for (i = 0; i < 10; i++)
+{
+	for (j = i + 1; j < 10; j++)
 	{
-		j = i / 100; /* hundreds */
-		k = (i / 10) % 10; /* tens */
-		l = i % 10; /* singles */
-
-		if (j < k && k < l)
+		for (k = j + 1; k < 10; k++)
 		{
-			putchar(j + '0');
-			putchar(k + '0');
-			putchar(l + '0');
+		putchar (i + '0');
+		putchar (j + '0');
+		putchar (k + '0');
 
-			if (i < 700)
-			{
-				putchar(',');
-				putchar(' ');
-			}
+		if (i != 7 || j != 8 || k != 9)
+		{
+			putchar (',');
+			putchar (' ');
+		}
 		}
 	}
+}
 putchar('\n');
 return (0);
 }
