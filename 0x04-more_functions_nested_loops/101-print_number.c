@@ -8,41 +8,30 @@
 
 void print_number(int n)
 {
-	long m; /* power of 10 */
-	int c; /* boolean check */
-	long num; /* convert int to long */
+	unsigned int a, b, count, tmp, pow;
 
-	num = n;
-	/* negatives */
-	if (num < 0)
+	a = n;
+	pow = b = 1;
+
+	if (n < 0)
 	{
-		num *= -1;
+		a = a * -1;
 		_putchar('-');
 	}
+	tmp = a;
 
-	/* count up */
-	m = 1;
-	c = 1;
-	while (c)
+	while (tmp > 9)
 	{
-		if (num / (m * 10) > 0)
-			m *= 10;
-		else
-			c = 0;
+		b++;
+		tmp = tmp / 10;
 	}
+	for (count = 1; count < b; count++)
+		pow = pow * 10;
 
-	/* count down */
-	while (num >= 0)
+	while (pow > 1)
 	{
-		if (m == 1)
-		{
-			_putchar(num % 10 + '0');
-			num = -1;
-		}
-		else
-		{
-			_putchar((num / m % 10) + '0');
-			m /= 10;
-		}
+		_putchar((a / pow) % 10 + '0');
+			pow = pow / 10;
 	}
+	_putchar(a % 10 + '0');
 }
