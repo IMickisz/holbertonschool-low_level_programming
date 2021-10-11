@@ -3,6 +3,7 @@
 /**
  * _strlen - swaps the values of two integers.
  * @s: pointer to int b
+ * Return : The length of the string c
  */
 
 int _strlen(char *s)
