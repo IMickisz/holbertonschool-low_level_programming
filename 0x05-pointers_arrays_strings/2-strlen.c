@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * _strlen - swaps the values of two integers.
+ * _strlen - returns the length of a string
  * @s: pointer to int b
- * Return : The length of the string c
+ *
+ * Return: The length of the string c
  */
 
 int _strlen(char *s)
