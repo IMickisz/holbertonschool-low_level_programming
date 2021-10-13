@@ -4,7 +4,6 @@
  * reverse_array - reverses the content of an array of integers
  * @a: pointer to a string
  * @n: number of elements of the array
- * Return: the pointer to dest
  */
 
 void reverse_array(int *a, int n)
@@ -16,6 +15,6 @@ void reverse_array(int *a, int n)
 	{
 		ch = a[i];
 		a[i] = a[n - i - 1];
-		a[n - i -1] = ch;
+		a[n - i - 1] = ch;
 	}
 }
