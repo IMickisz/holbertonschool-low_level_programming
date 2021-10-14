@@ -17,7 +17,7 @@ char *cap_string(char *str)
 	{
 		if (a == 0 && str[a] >= 'a' && str[a] <= 'z')
 		       	str[a] = str[a] - 32;
-		if (str[a - 1] == 32 || str[a - 1] == 9 ||
+		if (str[a - 1] == ' ' || str[a - 1] == '\t' ||
 		    str[a - 1] == '\n' || str[a - 1] == ',' ||
 		    str[a - 1] == ';' || str[a - 1] == '.' ||
 		    str[a - 1] == '!' || str[a - 1] == '?' ||
