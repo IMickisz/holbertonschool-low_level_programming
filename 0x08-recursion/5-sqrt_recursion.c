@@ -1,28 +1,31 @@
 #include "main.h"
 
 /**
- * squrt2 - Makes possible to evaluate from 1 to n
- * @a: same number as n
- * @b: number that iterates from 1 to n
- * Return: On success 1. On error -1.
+ * _sqrt_recursion_helper - helper for finding sqrt, recursion
+ * @n: number for finding sqrt
+ * @i: counter
+ * Return: returns array that is a pointer
  */
 
-int squrt2(int a, int b)
+int _sqrt_recursion_helper(int n, int i)
 {
-	if (b * b == a)
-		return (b);
-	else if (b * b > a)
+	if (n == 0 || n == 1)
+		return (1);
+	if (n == i || n < 0)
 		return (-1);
-	return (sqrt2(a, b + 1));
+	if (i * i == n)
+		return (i);
+
+	return (_sqrt_recursion_helper(n, i + 1));
 }
 
 /**
- * _sqrt_recursion - returns the natural square root of n
- * @n: Number, integer
- * Return: On success 1. On error -1.
+ * _sqrt_recursion - returns the natural square root of a number
+ * @n: number
+ * Return: the sqrt
  */
 
 int _sqrt_recursion(int n)
 {
-	return (sqrt2(n, 1));
+	return (_sqrt_recursion_helper(n, 1));
 }
