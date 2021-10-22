@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 		{
 			if (argv[i][j] > 47 && argv[i][j] < 58)
 				continue;
-			else if (!atoi(argv[i]))
+			else
 			{
 				printf("Error\n");
 				return (1);
