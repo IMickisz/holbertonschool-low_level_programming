@@ -29,7 +29,7 @@ char *str_concat(char *s1, char *s2)
 	for (i = 0; i < len1; i++)
 		*(a + i) = *(s1 + i);
 	p = 0;
-	for (j = len1; j < combolen; j++;)
+	for (j = len1; j < combolen; j++)
 	{
 		*(a + j) = *(s2 + p);
 		p++;
