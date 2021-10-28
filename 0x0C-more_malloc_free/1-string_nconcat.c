@@ -19,13 +19,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int i, j, k;
 
 	if (s1 == NULL)
-		s1 = "";
+		i = 0;
+	else
+		for (i = 0; s1[i] != '\0'; i++)
+			;
 	if (s2 == NULL)
-		s2 = "";
-	for (i = 0; s1[i] != '\0'; i++)
-		;
-	for (j = 0; s2[j] != '\0'; j++)
-		;
+		j = 0;
+	else
+		for (j = 0; s2[j] != '\0'; j++)
+			;
 	if (j > n)
 		j = n;
 	s = malloc(sizeof(char) * (i + j + 1));
