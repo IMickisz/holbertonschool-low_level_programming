@@ -16,39 +16,25 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *s;
-	unsigned int i, j, len1, len2, length;
+	unsigned int i, j, k;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	len1 = _strlen(s1);
-	len2 = _strlen(s2);
-	if (n >= len2)
-		n = len2;
-	length = n + len1 + 1;
-	s = malloc(sizeof(char *) * length);
+	for (i = 0; s1[i]; i++)
+		;
+	for (j = 0; s2[j]; j++)
+		;
+	if (j > n)
+		j = n;
+	s = malloc(sizeof(char) * (i + j + 1));
 	if (s == NULL)
 		return (NULL);
-	for (i = 0; i < len1; i++)
-		s[i] = s1[i];
-	for (j = 0; j < n; j++)
-		s[len1 + j] = s2[j];
-	s[length] = '\0';
+	for (k = 0; k < i; k++)
+		s[k] = s1[k];
+	for (k = 0; k < j; k++)
+		s[i + k] = s2[k];
+	s[i + j] = '\0';
 	return (s);
-}
-
-/**
- * _strlen - returns the length of a string.
- * @s: pointer to String
- * Return: length of a string
- */
-
-unsigned int _strlen(char *s)
-{
-	unsigned int i;
-
-	for (i = 0; *(s + i) != '\0'; i++)
-		;
-	return (i);
 }
