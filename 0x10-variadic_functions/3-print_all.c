@@ -47,7 +47,7 @@ void print_all(const char * const format, ...)
 
 /**
  * print_char - print a char
- * @argsc: char to print
+ * @args: char to print
  * Return: void
  */
 void print_char(va_list args)
@@ -57,7 +57,7 @@ void print_char(va_list args)
 
 /**
  * print_int - prints an int
- * @argsi: int to print
+ * @args: int to print
  * Return: void
  */
 void print_int(va_list args)
@@ -67,7 +67,7 @@ void print_int(va_list args)
 
 /**
  * print_string - prints a string
- * @argstr: string to print
+ * @args: string to print
  * Return: void
  */
 void print_string(va_list args)
@@ -81,7 +81,7 @@ void print_string(va_list args)
 
 /**
  * print_float - prints a float
- * @argsf: float to print
+ * @args: float to print
  * Return: void
  */
 void print_float(va_list args)
