@@ -1,7 +1,10 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
-
+void print_char(va_list args);
+void print_int(va_list args);
+void print_string(va_list args);
+void print_float(va_list args);
 /**
  * print_all - function that prints anything
  * @format: list of argument types passed to the function
@@ -10,11 +13,11 @@
 
 void print_all(const char * const format, ...)
 {
-	unsigned i, j;
+	int i, j;
 	type_t all[] = {
 		{"c", print_char},
 		{"i", print_int},
-		{"s", print_str},
+		{"s", print_string},
 		{"f", print_float},
 		{NULL, NULL}
 	};
@@ -23,24 +26,23 @@ void print_all(const char * const format, ...)
 
 	va_start(valist, format);
 	i = 0;
-	while (format && format[i])
+	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
-		while (p[j].t != NULL)
+		while (j < 4)
 		{
-			if (*(p[j].t) == format[i])
+			if (*(format + i) == *(all[j]).t)
 			{
 				printf("%s", separator);
-				p[j].f(valist);
+				all[j].f(valist);
 				separator = ", ";
-				break;
 			}
 			j++;
 		}
 		i++;
 	}
-	va_end(valist);
 	printf("\n");
+	va_end(valist);
 }
 
 /**
@@ -48,9 +50,9 @@ void print_all(const char * const format, ...)
  * @argsc: char to print
  * Return: void
  */
-void print_char(va_list argsc)
+void print_char(va_list args)
 {
-	printf("%c", va_arg(argsc, int));
+	printf("%c", va_arg(args, int));
 }
 
 /**
@@ -58,9 +60,9 @@ void print_char(va_list argsc)
  * @argsi: int to print
  * Return: void
  */
-void print_int(va_list argsi)
+void print_int(va_list args)
 {
-	printf("%d", va_arg(argsi, int));
+	printf("%d", va_arg(args, int));
 }
 
 /**
@@ -68,9 +70,9 @@ void print_int(va_list argsi)
  * @argstr: string to print
  * Return: void
  */
-void print_string(va_list argstr)
+void print_string(va_list args)
 {
-	char *str = va_arg(argstr, char *);
+	char *str = va_arg(args, char *);
 
 	if (str == NULL)
 		str = "(nil)";
@@ -82,7 +84,7 @@ void print_string(va_list argstr)
  * @argsf: float to print
  * Return: void
  */
-void print_float(va_list argsf)
+void print_float(va_list args)
 {
-	printf("%f", va_arg(f, double));
+	printf("%f", va_arg(args, double));
 }
