@@ -1,12 +1,13 @@
-section .text
-	global main
-main:
-	mov ebx,1
-	mov ecx,msg
-	mov edx,17
-	mov eax,4
-	int 0x80
-	mov eax,0
-	int 0x80
 section .data
-	msg db 'Hello, World',0xa
+
+    message db "Hello, world!", 10
+
+section .text
+
+global _start
+_start:
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, message
+    mov rdx, 14
+    syscall
