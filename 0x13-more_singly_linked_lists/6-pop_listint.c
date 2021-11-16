@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * pop_listint - frees a list_t list
+ * pop_listint - deletes the head node of a listint_t
  * @head: double pointer to the start of the list
  * Return: head node data
  */
