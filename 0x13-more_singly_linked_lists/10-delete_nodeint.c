@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * insert_nodeint_at_index - inserts a new node at a given position
+ * delete_nodeint_at_index - delete a node at a given position
  * @head: double pointer to the start of the list
  * @index:  index where the node should be deleted
  * Return: 1 if it succeeded, -1 if it failed
@@ -24,7 +24,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		temp = temp->next;
 	if (temp == NULL || temp->next == NULL)
 		return (-1);
-        next = temp->next->next;
+	next = temp->next->next;
 	free(temp->next);
 	temp->next = next;
 	return (1);
