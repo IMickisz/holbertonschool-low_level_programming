@@ -6,10 +6,7 @@
  * @head: pointer to the first node of the reversed list
  * Return: pointer to the first node of the reversed list
  */
-/*next = *head;
-		*head = (*head)->next;
-		next->next = prev;
-		prev = next;*/
+
 listint_t *reverse_listint(listint_t **head)
 {
 	listint_t *prev = NULL, *next = NULL;
