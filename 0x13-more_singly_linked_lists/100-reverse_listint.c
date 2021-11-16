@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * delete_nodeint_at_index - delete a node at a given position
+ * reverse_listint - reverse the list
  * @head: pointer to the first node of the reversed list
  * Return: pointer to the first node of the reversed list
  */
