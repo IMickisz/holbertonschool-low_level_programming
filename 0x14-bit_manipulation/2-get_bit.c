@@ -9,14 +9,8 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-        int num = n;
-	unsigned int len = 0;
-
-	for (len = 0; n; len++) /*count the lenght of binary number*/
-		n >>= 1;
-	if (index >= len)
+	if (index >= 64)    /*size of unsigned long int*/
 		return (-1);
 	else
-		num = ((num >> index) & 1);
-	return (num);
+		return ((n >> index) & 1);
 }
