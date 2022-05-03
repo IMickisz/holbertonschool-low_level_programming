@@ -33,7 +33,7 @@ void print_array(int *array, int low, int high)
 
 int binary_search(int *array, size_t size, int value)
 {
-	int mid, hightest = array[size - 1], lowest = array[0];
+	int mid, hightest = size - 1, lowest = 0;
 
 	if (array == NULL)
 		return (-1);
